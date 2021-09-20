@@ -9,8 +9,6 @@ RUN conda install -c anaconda jupyter
 RUN conda install -c anaconda pandas
 RUN conda install -c anaconda nltk
 RUN pip install pytorch-lightning==0.9.0
-RUN pip install pytorch-lightning==0.9.0
-RUN pip install pytorch_lightning==0.9.0
 RUN pip install git-python==1.0.3
 RUN pip install transformers==3.1.0
 RUN pip install sacrebleu
