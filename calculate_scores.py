@@ -139,9 +139,8 @@ def bleu_(hyp, ref, mode, beam_sz=100, one2one=False, tmp_dir=''):
 
             else:
                 ref_paths = []                   
-                refs = [ref for ref in get_rid_of_period(refs) if len(ref.split())>1]
+                refs = [ref for ref in get_rid_of_period(refs) if len(ref.split())>0]
                 
-                if len(refs)<1:refs.append(word)
                 for j, ref_ in enumerate(refs):
                     ref_path = tmp_dir+'ref/' + str(j)
                     with open(ref_path, 'w',encoding='utf-8') as f:
@@ -179,7 +178,6 @@ def cal_bleu_for_beams(data_dir, type_path, pred_dir, output_dir, beam_sz, mode,
         references, test_predictions = tokenize_jp(references, test_predictions)
         
     scores = []
-#     c_range = [c_range[0]*0.1, c_range[1]*0.1]
     for i in tqdm(range(int(len(test_predictions)/beam_sz*c_range[0]),int(len(test_predictions)/beam_sz*c_range[1]))):
         if one2one:
             ref_list = [references[i] for j in range(beam_sz)]
