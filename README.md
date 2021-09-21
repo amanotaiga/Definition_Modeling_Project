@@ -14,5 +14,5 @@ unzip naacl_data.zip
 ## Run Experiments
 The dataset can be specified in script (wordent, oxford, slang, wiki).
 ```
-./run_finetune_t5_experiment.sh
+./finetune_t5_experiment.sh
 ```
