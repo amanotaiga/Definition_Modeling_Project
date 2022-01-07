@@ -85,7 +85,7 @@ export CUDA_VISIBLE_DEVICES=2
 python finetune.py --model_name_or_path $MODEL --data_dir $DATA_DIR --eval_batch_size $TEST_BATCH_SIZE --output_dir $T5_SPECIFIC_OUTPUT_DIR --max_source_length $MAX_LEN --max_target_length $MAX_LEN --do_predict --gpus 1 --option "t5_specific" &
 
 export CUDA_VISIBLE_DEVICES=1
-python finetune.py --model_name_or_path　$MODEL --data_dir $DATA_DIR --eval_batch_size $TEST_BATCH_SIZE --output_dir $T5_GENERAL_OUTPUT_DIR --max_source_length $MAX_LEN --max_target_length $MAX_LEN --do_predict --gpus 1 --option "t5_general" &
+python finetune.py --model_name_or_path $MODEL --data_dir $DATA_DIR --eval_batch_size $TEST_BATCH_SIZE --output_dir $T5_GENERAL_OUTPUT_DIR --max_source_length $MAX_LEN --max_target_length $MAX_LEN --do_predict --gpus 1 --option "t5_general" &
 wait
 
 echo "re-ranking scores on validation set calculated" >> ${SCORE_DIR}progress.txt
